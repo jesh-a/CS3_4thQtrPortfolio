@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/movie.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+    <title> 1st Graded ༘ ⋆｡ </title>
+</head>
+<body>
+    <div class="ratingBox">
+        <h1> Add a Movie ⋆˚࿔ </h1>
+        <form action="/movies" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" required>
+
+            <select id="genre" name="genre" required>
+                <option value="">Select Genre</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Romance">Romance</option>
+            </select>
+
+            <div class="stars" id="stars">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+            </div>
+        </form>
+
+    <button id="saveBtn">Add Movie 𖹭.ᐟ </button>
+    <h1> Movie List : </h1>
+    <ul id="movieList"></ul>
+        </div>
+
+<script src="js/movie.js"></script>
+
+</body>
+</html>
