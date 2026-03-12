@@ -44,3 +44,17 @@ button{
 .movie-list {
   margin-top: 20px;
 }
+
+.deleteBtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.deleteBtn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
