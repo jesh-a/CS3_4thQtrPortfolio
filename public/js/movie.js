@@ -40,13 +40,24 @@ function saveMovie() {
 
   let movies = getMovies();
 
+  // checks if the movie is already in the list by title and year
   const index = movies.findIndex(
     (m) => m.title.toLowerCase() === title.toLowerCase() && m.year === year,
   );
-  const movie = { title, year, genre, rating };
+  
+  const movie = { 
+    title, 
+    year,
+    genre,
+    totalRating: rating,
+    numUpdates: 1
+  };
 
   // if movie is already there it updates it
   if (index !== -1) {
+    movie.totalRating += movies[index].totalRating;
+    movie.numUpdates += movies[index].numUpdates;
+
     movies[index] = movie;
     alert("Movie updated!");
   // it adds a movie if not
@@ -76,7 +87,6 @@ function deleteMovie(index) {
 function displayMovies() {
   const movies = getMovies();
   const list = document.getElementById("movieList");
-
   list.innerHTML = "";
 
   // displays the movies with their title, year, genre, rating and a delete button for each movie ?
@@ -84,8 +94,11 @@ function displayMovies() {
     const li = document.createElement("li");
     li.className = "movie-item";
 
-    const starsDisplay =
-      "★".repeat(movie.rating) + "☆".repeat(5 - movie.rating);
+    // const starsDisplay =
+    //   "★".repeat(movie.avgRating) + "☆".repeat(5 - movie.avgRating);
+    // ignore 
+    let avgRating = (movie.totalRating / (movie.numUpdates));
+    const starsDisplay = avgRating + "★'s";
 
     li.innerHTML = `${movie.title} (${movie.year}) - ${movie.genre} - ${starsDisplay}
             <button class="deleteBtn" onclick="deleteMovie(${index})">Delete</button>`;
