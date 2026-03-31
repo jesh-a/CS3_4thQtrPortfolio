@@ -20,16 +20,27 @@
       height: 200px;
     }
     .content {
+      position: absolute; top: 66px; left: 200px;
       background: lightyellow;
       width: 300px;
       height: 200px;
+      z-index: 1;
     }    
+    .notice {
+      position: absolute;
+      top: 67px;
+      left: 430px;
+      background: orange;
+      padding: 10px;
+      z-index: 2;
+}
   </style>
 </head>
 <body>
   <div class="header">Header</div>
   <div class="sidebar">Sidebar</div>
   <div class="content">Main Content</div>
+  <div class="notice">Notice!</div>
   <div class="footer">Footer</div>
 </body>
 </html>

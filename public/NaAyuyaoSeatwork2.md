@@ -73,6 +73,8 @@
 
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
 
+> It makes the element no longer follow the usual document layout, it positions itself by its corresponding parent element or nearby elements. It's different as instead of being completely fixed in the position, absolute depends on the values of top, bottom, left, right, and the position of other elements.
+
 ### Step 4 : (Absolute)
 
 - Add in html ```<div class="notice">Notice!</div>``` and include the css below:
@@ -92,10 +94,25 @@
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
 
+> The z-index makes it seem like layers stacked on each other, so when you swap their values, the notice goes below the content.
+
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
+
+     ```css
+            .notice {
+                position: absolute;
+                top: 67px;
+                left: 430px;
+                background: orange;
+                padding: 10px;
+                z-index: 2;
+            }
+    ```
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
+        > When it's relative, following the same top and left values when its absolute, moves towards the center. When it's fixed, alone, it stays on the left side and stays in place even if I scroll.
     * What do you observe on about the effect of z-index on .notice and .content boxes?
+        > It works like layers, the higher the z-index, the more it is on top of the others.
 
 3. Please answer the following reflection questions (15 minutes)
 
@@ -106,3 +123,13 @@
     c. How do you differentiate sticky from fixed (you can research on sticky)?
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+
+-- -- -- -- -- 
+
+    > a. Static is default; relative is relative to the default and is based on values inputted to top, bottom, left, and right; absolute positions the element relative to the other elements, or its parent, and removes them from ordinary document layout flow; fixed keeps the element in a fixed position no matter where you scroll to.
+
+    > b. It positions the element based on the edges of its parent element. 
+
+    > c. Sticky positions the element according to the normal document flow, while fixed removes the element from the normal document flow.
+
+    > d. I would use CSS positioning when creating webpages in order for it to be organized, like example, for positioning charts or boxes to keep it organized and visually appealing to the viewers. Like using z-index for example, I could use it to highlight which areas are important, etc.
