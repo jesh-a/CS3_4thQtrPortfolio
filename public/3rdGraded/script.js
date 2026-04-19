@@ -1,9 +1,12 @@
 
 function plotPoint(x0, y0, x, y){ 
 
+    let point = document.createElement('div');  
+    let in1 = document.getElementById('in1');
+    let out1 = document.getElementById('out1');
+
     console.log(x0, y0, x, y) // checks the arguments passed to this function
     in1.innerHTML = x0 + " " + y0 + " " + x + " " + y;
-    let point = document.createElement('div');  
     point.className = 'point';
     /* control where to place the div on the screen using left and bottom of position:absolute */
     point.style.left = (x - x0 + 200 - 5) + 'px'; // subtract half the width of the point to center it by changing left css property
